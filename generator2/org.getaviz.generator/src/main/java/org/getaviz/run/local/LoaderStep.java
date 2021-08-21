@@ -13,11 +13,11 @@ public class LoaderStep {
     public static void main(String[] args) {
         SettingsConfiguration.getInstance("src/test/resources/ABAPCityTest.properties");
         boolean isSilentMode = true;
-        String pathToNodesCsv = "";
-        String pathToReferenceCsv = "";
-        String pathToInheritanceCsv = "";
-        String pathToMigrationFindingsCsv = "";
-        String pathToMigrationFindingsNewCsv = "";
+        String pathToNodesCsv = "C:\\Users\\luido\\OneDrive\\Dokumente\\GitHub\\Getaviz\\generator2\\org.getaviz.generator\\src\\test\\neo4jexport\\Extract_20200308_L20\\20210308_Test.csv";
+        String pathToReferenceCsv = "C:\\Users\\luido\\OneDrive\\Dokumente\\GitHub\\Getaviz\\generator2\\org.getaviz.generator\\src\\test\\neo4jexport\\Extract_20200308_L20\\20210308_Test_Reference.csv";
+        String pathToInheritanceCsv = "C:\\Users\\luido\\OneDrive\\Dokumente\\GitHub\\Getaviz\\generator2\\org.getaviz.generator\\src\\test\\neo4jexport\\Extract_20200308_L20\\20210308_Test_Inheritance.csv";
+        String pathToMigrationFindingsCsv = "C:\\Users\\luido\\OneDrive\\Dokumente\\GitHub\\Getaviz\\generator2\\org.getaviz.generator\\src\\test\\neo4jexport\\Extract_20200308_L20\\20210308_Test_TypeOf.csv";
+        String pathToMigrationFindingsNewCsv = "C:\\Users\\luido\\OneDrive\\Dokumente\\GitHub\\Getaviz\\generator2\\org.getaviz.generator\\src\\test\\neo4jexport\\Extract_20200308_L20\\l20_20200308_rc3.0.csv";
 
         Scanner userInput = new Scanner(System.in);
         System.out.print("Silent mode? (y/n): "); // Silent mode to run with default values

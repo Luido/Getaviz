@@ -387,7 +387,7 @@ var relationController = function () {
 			const sourceEntity = relation.source;
 			const relatedEntity = relation.target;
 
-			//create scene element
+			//create scene elementcon
 			const connectorElements = relationConnectionHelper.createConnector(sourceEntity, relatedEntity, relation.id);
 
 			//source or target not rendered -> no connector

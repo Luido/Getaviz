@@ -95,7 +95,7 @@ var createRelationConnectionHelper = function(controllerConfig) {
             }
             return mergedObject;
         }
-
+/////////////// this is important /////////////////////
         function createConnector(entity, relatedEntity, relationId) {
             const {sourcePosition, targetPosition} = evaluatePositions(entity, relatedEntity);
             if (!sourcePosition || !targetPosition) {
@@ -107,6 +107,9 @@ var createRelationConnectionHelper = function(controllerConfig) {
             const direction = new THREE.Vector3(delta.x, delta.y, delta.z).normalize();
 
             // create connector
+            // const connector = document.createElement("a-curve")
+            // need to set a-curve with 2 points (start and end)
+            // then add my created class a-draw-curve and draw the curve 
             const connector = document.createElement("a-cylinder");
             const halfwayPoint = combineObjectProperties(sourcePosition, delta, (left, right) => left + right / 2);
             setConnectorMeshProperties(connector, halfwayPoint, direction, connectorSize, distance);
