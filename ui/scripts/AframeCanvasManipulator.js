@@ -45,6 +45,8 @@ var canvasManipulator = (function () {
                 }
             }
         });
+
+        
     }
 
     function reset() {

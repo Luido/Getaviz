@@ -120,9 +120,10 @@ if (isset($_GET["lazy"])) {
 <script type="text/javascript" src="scripts/CanvasResetView/CanvasResetViewController.js"></script>
 <script type="text/javascript" src="scripts/CanvasGrid/CanvasGridController.js"></script>
 
-
+<script type="text/javascript" src="scripts/Relation/Define_curve/curve_body.js"></script>
 <script type="text/javascript" src="scripts/Relation/RelationController.js"></script>
 <script type="text/javascript" src="scripts/Relation/RelationConnectionHelper.js"></script>
+
 
 <script type="text/javascript" src="scripts/Menu/MenuController.js"></script>
 <script type="text/javascript" src="scripts/HelpController/HelpController.js"></script>
