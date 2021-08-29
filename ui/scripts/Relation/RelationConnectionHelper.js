@@ -96,6 +96,10 @@ var createRelationConnectionHelper = function(controllerConfig) {
             return mergedObject;
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
 =======
         
 >>>>>>> Stashed changes
@@ -118,7 +122,11 @@ var createRelationConnectionHelper = function(controllerConfig) {
             // need to set a-curve with 2 points (start and end)
             // then add my created class a-draw-curve and draw the curve 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             const connector = document.createElement("a-cylinder");
+=======
+            //const connector = document.createElement("a-cylinder");
+>>>>>>> Stashed changes
 =======
             //const connector = document.createElement("a-cylinder");
 >>>>>>> Stashed changes
@@ -182,7 +190,11 @@ var createRelationConnectionHelper = function(controllerConfig) {
             
             draw_curve.setAttribute("curveref",relationId);
             draw_curve.setAttribute("material","shader", "line");
+<<<<<<< Updated upstream
             draw_curve.setAttribute("material", "color","blue");
+=======
+            draw_curve.setAttribute("material", "color","hotpink");
+>>>>>>> Stashed changes
             console.log(draw_curve);
             
             rep_entity.setAttribute("clone-along-curve","curve",relationId);
@@ -196,14 +208,21 @@ var createRelationConnectionHelper = function(controllerConfig) {
             connectorElements.push(draw_curve);
             connectorElements.push(rep_entity);
             //connectorElements.push(bow);
+<<<<<<< Updated upstream
             
             scene.appendChild(curve);
             scene.appendChild(draw_curve);
             scene.appendChild(rep_entity);
+=======
+            scene.appendChild(draw_curve);
+            scene.appendChild(rep_entity);
+            scene.appendChild(curve);
+            
+>>>>>>> Stashed changes
             //scene.appendChild(bow);
             
             // create endpoints
-            if (controllerConfig.createEndpoints) {
+            /**if (controllerConfig.createEndpoints) {
                 const size = connectorSize * 1.5;
                 const length = size * 6;
                 const sourceEndpoint = document.createElement("a-cylinder");
@@ -219,7 +238,7 @@ var createRelationConnectionHelper = function(controllerConfig) {
                 scene.appendChild(targetEndpoint);
                 connectorElements.push(sourceEndpoint);
                 connectorElements.push(targetEndpoint);
-            }
+            }*/
             return connectorElements;
         }
 

@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [{"id":            "ID_0166fed357196a09244efe558dbeb27e6e0d646b",
     "qualifiedName": "bank.customer.PrivateCustomer.credits",
     "name":          "credits",
@@ -749,6 +750,8 @@
     
     }]
 =======
+=======
+>>>>>>> Stashed changes
 [{
 "id": "ID_0005ec51-ec28-4dd3-99a4-1a60833061e4",
 "qualifiedName": "/GSA/BEX./GSA/BEX_GN./GSA/BEX_GN_GETKEY.C_DATABASE_ENET_GAS",
@@ -71478,5 +71481,9 @@
 "changed": 20190409,
 "iteration": 0,
 "container_id": 3276,
+<<<<<<< Updated upstream
+"belongsTo": "ID_deb6447a-969c-4cd2-be24-588d324e6e07"}]
+>>>>>>> Stashed changes
+=======
 "belongsTo": "ID_deb6447a-969c-4cd2-be24-588d324e6e07"}]
 >>>>>>> Stashed changes

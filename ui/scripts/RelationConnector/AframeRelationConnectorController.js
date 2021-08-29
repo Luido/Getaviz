@@ -265,6 +265,7 @@ var relationConnectorController = function(){
         bow.setAttribute("color","hotpink");
         bow.setAttribute("geometry","segmentsTubular",50);
         scene.appendChild(bow);*/
+<<<<<<< Updated upstream
 
         var curve = document.createElement("a-curve");
         curve.setAttribute("id",relationId);
@@ -272,6 +273,13 @@ var relationConnectorController = function(){
 
         var start_point = document.createElement("a-curve-point");
 		var end_point = document.createElement("a-curve-point");
+=======
+		var start_point = document.createElement("a-curve-point");
+		var end_point = document.createElement("a-curve-point");
+        var curve = document.createElement("a-curve");
+        curve.setAttribute("id",relationId);
+        curve.setAttribute("type","QuadraticBezier");
+>>>>>>> Stashed changes
 		
         start_point.setAttribute("position",sourcePosition);
         start_point.setAttribute("geometry","primitive","box");
@@ -295,7 +303,11 @@ var relationConnectorController = function(){
         var draw_curve = document.createElement("a-draw-curve");
         draw_curve.setAttribute("curveref",relationId);
         draw_curve.setAttribute("material","shader", "line");
+<<<<<<< Updated upstream
         draw_curve.setAttribute("material", "color","blue");
+=======
+        draw_curve.setAttribute("material", "color","hotpink");
+>>>>>>> Stashed changes
 
         var rep_entity = document.createElement("a-entity");
         rep_entity.setAttribute("clone-along-curve","curve",relationId);
@@ -303,7 +315,11 @@ var relationConnectorController = function(){
             
         rep_entity.setAttribute("geometry","primitive","cylinder"); 
         rep_entity.setAttribute("geometry","height",0.2);
+<<<<<<< Updated upstream
         rep_entity.setAttribute("geometry","radius",5);
+=======
+        rep_entity.setAttribute("geometry","radius",10);
+>>>>>>> Stashed changes
 
 		/*connector.addEventListener("loaded", function() {
 			let threeMesh = this.object3DMap.mesh;
@@ -332,6 +348,7 @@ var relationConnectorController = function(){
 		//scene.appendChild(connector);
 		scene.appendChild(curve);
             
+<<<<<<< Updated upstream
             scene.appendChild(draw_curve);
             scene.appendChild(rep_entity);
 		var connectorElements = [];
@@ -342,6 +359,18 @@ var relationConnectorController = function(){
             connectorElements.push(draw_curve);
             connectorElements.push(rep_entity);
             connectorElements.push(bow);
+=======
+        scene.appendChild(draw_curve);
+        scene.appendChild(rep_entity);
+		var connectorElements = [];
+		//connectorElements.push(connector);
+		connectorElements.push(curve);
+        connectorElements.push(start_point);
+        connectorElements.push(end_point);
+        connectorElements.push(draw_curve);
+        connectorElements.push(rep_entity);
+        //connectorElements.push(bow);
+>>>>>>> Stashed changes
 
 		// create Endpoints
         if(controllerConfig.createEndpoints) {
