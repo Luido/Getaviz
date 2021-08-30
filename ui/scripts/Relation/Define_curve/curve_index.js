@@ -1,7 +1,10 @@
 /* global AFRAME */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
+=======
+>>>>>>> Stashed changes
  /**
   * Source:
    * https://github.com/protyze/aframe-curve-component/blob/master/index.js
@@ -10,6 +13,9 @@
    *        - onload for EventListener 
    *        - smaler adjustments to suit the aframe version
    */
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 if (typeof AFRAME === 'undefined') {
     throw new Error('Component attempted to register before AFRAME was available.');
@@ -79,7 +85,11 @@ AFRAME.registerComponent('curve', {
                 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 return point.object3D.getWorldPosition();
+=======
+                return point.object3D.getWorldPosition(point.object3D.position);
+>>>>>>> Stashed changes
 =======
                 return point.object3D.getWorldPosition(point.object3D.position);
 >>>>>>> Stashed changes
@@ -90,8 +100,11 @@ AFRAME.registerComponent('curve', {
                 this.curve = null;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 this.pathPoints = pointsArray;
 =======
+=======
+>>>>>>> Stashed changes
                 this.pathPoints = []
                 this.pathPoints[0] = pointsArray[0]
                 var distance_AB = Math.sqrt((pointsArray[0].getComponent(0)-pointsArray[1].getComponent(0))*(pointsArray[0].getComponent(0)-pointsArray[1].getComponent(0))
@@ -99,6 +112,9 @@ AFRAME.registerComponent('curve', {
                     +(pointsArray[0].getComponent(2)-pointsArray[1].getComponent(2))*(pointsArray[0].getComponent(2)-pointsArray[1].getComponent(2)))
                 this.pathPoints[1] = {x: (pointsArray[0].getComponent(0)+pointsArray[1].getComponent(0))/2-distance_AB/3,y:((pointsArray[0].getComponent(1)+pointsArray[1].getComponent(1))/2) + distance_AB/2,z:(pointsArray[0].getComponent(2)+pointsArray[1].getComponent(2))/2}
                 this.pathPoints[2]= pointsArray[1]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
                 // Create Curve
@@ -192,17 +208,23 @@ AFRAME.registerShader('line', {
 
     init: function (data) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         this.material = new THREE.LineBasicMaterial(data);
     },
 
     update: function (data) {
         this.material = new THREE.LineBasicMaterial(data);
 =======
+=======
+>>>>>>> Stashed changes
         this.material = new THREE.LineBasicMaterial({color: data.color});
     },
 
     update: function (data) {
         this.material = new THREE.LineBasicMaterial({color: data.color});
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     },
 });
@@ -217,12 +239,18 @@ AFRAME.registerComponent('draw-curve', {
 
     init: function () {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         this.data.curve.addEventListener('curve-updated', this.update.bind(this));
 =======
+=======
+>>>>>>> Stashed changes
         window.onload=function(){
             this.data.curve.addEventListener('curve-updated', this.update.bind(this));
             
           }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     },
 
@@ -234,8 +262,13 @@ AFRAME.registerComponent('draw-curve', {
         if (this.curve && this.curve.curve) {
             var lineGeometry = new THREE.BufferGeometry().setFromPoints(this.curve.curve.getPoints(this.curve.curve.getPoints().length * 10));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             var mesh = this.el.getOrCreateObject3D('mesh', THREE.Line);
             lineMaterial = mesh.material ? mesh.material : new THREE.LineBasicMaterial({
+=======
+            var mesh = this.el.getObject3D('mesh', THREE.Line);
+            lineMaterial = mesh && mesh.material ? mesh.material : new THREE.LineBasicMaterial({
+>>>>>>> Stashed changes
 =======
             var mesh = this.el.getObject3D('mesh', THREE.Line);
             lineMaterial = mesh && mesh.material ? mesh.material : new THREE.LineBasicMaterial({
@@ -273,14 +306,20 @@ AFRAME.registerComponent('clone-along-curve', {
 
     init: function () {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         this.el.addEventListener('model-loaded', this.update.bind(this));
         this.data.curve.addEventListener('curve-updated', this.update.bind(this));
 =======
+=======
+>>>>>>> Stashed changes
         window.onload=function(){
             this.el.addEventListener('model-loaded', this.update.bind(this));
             this.data.curve.addEventListener('curve-updated', this.update.bind(this));
             
           }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     },
 
@@ -299,7 +338,13 @@ AFRAME.registerComponent('clone-along-curve', {
             var counter = start;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             var cloneMesh = this.el.getOrCreateObject3D('clones', THREE.Group);
+=======
+            //var cloneMesh = this.el.getOrCreateObject3D('clones', THREE.Group);
+            this.el.setObject3D('clones', new THREE.Group());
+            var cloneMesh = this.el.getObject3D('clones')
+>>>>>>> Stashed changes
 =======
             //var cloneMesh = this.el.getOrCreateObject3D('clones', THREE.Group);
             this.el.setObject3D('clones', new THREE.Group());

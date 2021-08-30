@@ -241,10 +241,17 @@ var relationConnectorController = function(){
 		var connectorSize = 0.05;
 
         // This function made no sense and doesn't seem to work on x3dom either
+<<<<<<< Updated upstream
 		/*if(controllerConfig.fixPositionZ) {
             sourcePosition.z = controllerConfig.fixPositionZ;
             targetPosition.z = controllerConfig.fixPositionZ;
         }*/
+=======
+		if(controllerConfig.fixPositionZ) {
+            sourcePosition.z = controllerConfig.fixPositionZ;
+            targetPosition.z = controllerConfig.fixPositionZ;
+        }
+>>>>>>> Stashed changes
 		// suggestion for city model: draw horizontal cylinders on the lower positions level
 		if(controllerConfig.fixPositionY) {
 			sourcePosition.y = Math.min(sourcePosition.y, targetPosition.y);
@@ -258,13 +265,18 @@ var relationConnectorController = function(){
         let distance = sourcePosition.distanceTo(targetPosition);
         let direction = new THREE.Vector3(deltaX, deltaY, deltaZ).normalize();
 
+<<<<<<< Updated upstream
         //var connector = document.createElement("a-cylinder");
+=======
+        var connector = document.createElement("a-cylinder");
+>>>>>>> Stashed changes
         /**var bow = document.createElement("a-torus");
         bow.setAttribute("position",sourcePosition);
         bow.setAttribute("radius",10);
         bow.setAttribute("color","hotpink");
         bow.setAttribute("geometry","segmentsTubular",50);
         scene.appendChild(bow);*/
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
         var curve = document.createElement("a-curve");
@@ -274,11 +286,16 @@ var relationConnectorController = function(){
         var start_point = document.createElement("a-curve-point");
 		var end_point = document.createElement("a-curve-point");
 =======
+=======
+>>>>>>> Stashed changes
 		var start_point = document.createElement("a-curve-point");
 		var end_point = document.createElement("a-curve-point");
         var curve = document.createElement("a-curve");
         curve.setAttribute("id",relationId);
         curve.setAttribute("type","QuadraticBezier");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		
         start_point.setAttribute("position",sourcePosition);
@@ -304,7 +321,11 @@ var relationConnectorController = function(){
         draw_curve.setAttribute("curveref",relationId);
         draw_curve.setAttribute("material","shader", "line");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         draw_curve.setAttribute("material", "color","blue");
+=======
+        draw_curve.setAttribute("material", "color","hotpink");
+>>>>>>> Stashed changes
 =======
         draw_curve.setAttribute("material", "color","hotpink");
 >>>>>>> Stashed changes
@@ -316,12 +337,18 @@ var relationConnectorController = function(){
         rep_entity.setAttribute("geometry","primitive","cylinder"); 
         rep_entity.setAttribute("geometry","height",0.2);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         rep_entity.setAttribute("geometry","radius",5);
 =======
         rep_entity.setAttribute("geometry","radius",10);
 >>>>>>> Stashed changes
 
 		/*connector.addEventListener("loaded", function() {
+=======
+        rep_entity.setAttribute("geometry","radius",10);
+
+		connector.addEventListener("loaded", function() {
+>>>>>>> Stashed changes
 			let threeMesh = this.object3DMap.mesh;
 
             threeMesh.scale.set(connectorSize, distance, connectorSize);
@@ -337,14 +364,22 @@ var relationConnectorController = function(){
             var quaternion = threeMesh.quaternion;
             quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
 
+<<<<<<< Updated upstream
 		});*/
 		//connector.setAttribute("flat-shading", true);
 		//connector.setAttribute("shader", "flat");
 //                 connector.setAttribute("radius", 5);
+=======
+		});
+		connector.setAttribute("flat-shading", true);
+		connector.setAttribute("shader", "flat");
+                 connector.setAttribute("radius", 5);
+>>>>>>> Stashed changes
 
 
 
 		let scene = document.querySelector("a-scene");
+<<<<<<< Updated upstream
 		//scene.appendChild(connector);
 		scene.appendChild(curve);
             
@@ -364,12 +399,24 @@ var relationConnectorController = function(){
         scene.appendChild(rep_entity);
 		var connectorElements = [];
 		//connectorElements.push(connector);
+=======
+		scene.appendChild(connector);
+		scene.appendChild(curve);
+            
+        scene.appendChild(draw_curve);
+        scene.appendChild(rep_entity);
+		var connectorElements = [];
+		connectorElements.push(connector);
+>>>>>>> Stashed changes
 		connectorElements.push(curve);
         connectorElements.push(start_point);
         connectorElements.push(end_point);
         connectorElements.push(draw_curve);
         connectorElements.push(rep_entity);
         //connectorElements.push(bow);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 		// create Endpoints
