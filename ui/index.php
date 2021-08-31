@@ -120,7 +120,10 @@ if (isset($_GET["lazy"])) {
 <script type="text/javascript" src="scripts/CanvasResetView/CanvasResetViewController.js"></script>
 <script type="text/javascript" src="scripts/CanvasGrid/CanvasGridController.js"></script>
 
+<<<<<<< Updated upstream
 <script type="text/javascript" src="scripts/Relation/Define_curve/curve_body.js"></script>
+=======
+>>>>>>> Stashed changes
 <script type="text/javascript" src="scripts/Relation/RelationController.js"></script>
 <script type="text/javascript" src="scripts/Relation/RelationConnectionHelper.js"></script>
 

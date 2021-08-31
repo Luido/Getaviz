@@ -1,3 +1,7 @@
+/**
+* Main - Changes in CreateConnector Function
+* by Luise Dose
+ */
 var createRelationConnectionHelper = function(controllerConfig) {
     return (function(controllerConfig) {
 
@@ -98,6 +102,7 @@ var createRelationConnectionHelper = function(controllerConfig) {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
         
 >>>>>>> Stashed changes
@@ -108,6 +113,17 @@ var createRelationConnectionHelper = function(controllerConfig) {
         
 >>>>>>> Stashed changes
 /////////////// this is important /////////////////////
+=======
+        
+/**
+ * Changes:
+ *  -- create multiple small connectors to draw connection between source and target
+ *  -- end_points_in_between: decides the number of connectors that are drawn (more precisly how many points inbetween source and target point will be calculated)
+ *  -- max_plus_y: decides the main amplitude of the curve
+ *  -- works fine with end_points_in_between = 14 and max_plus_y = 30
+ */
+
+>>>>>>> Stashed changes
         function createConnector(entity, relatedEntity, relationId) {
             const {sourcePosition, targetPosition} = evaluatePositions(entity, relatedEntity);
             if (!sourcePosition || !targetPosition) {
@@ -115,6 +131,7 @@ var createRelationConnectionHelper = function(controllerConfig) {
             }
 
             const delta = combineObjectProperties(targetPosition, sourcePosition, (left, right) => left - right);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             const distance_start_end  = Math.sqrt((targetPosition.x-targetPosition.x)*(targetPosition.x-targetPosition.x));
             delta.x= delta.x-distance_start_end/3;
@@ -126,10 +143,14 @@ var createRelationConnectionHelper = function(controllerConfig) {
             //delta.x= delta.x-distance_start_end/3;
             //delta.y = delta.y + distance_start_end/2;*/
 >>>>>>> Stashed changes
+=======
+            
+>>>>>>> Stashed changes
             const distance = sourcePosition.distanceTo(targetPosition);
             
             const direction = new THREE.Vector3(delta.x, delta.y, delta.z).normalize();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             // create connector
             // const connector = document.createElement("a-curve")
@@ -155,11 +176,14 @@ var createRelationConnectionHelper = function(controllerConfig) {
             //scene.appendChild(connector);
            
 =======
+=======
+>>>>>>> Stashed changes
             console.log(delta) // delta is the difference between startpoint and endpoint
             console.log(distance) // distance is euclidean distance between start and endpoint
             console.log(connectorSize)
             console.log('dir')
             console.log(direction)
+<<<<<<< Updated upstream
              //create connector
             
             // need to set a-curve with 2 points (start and end)
@@ -174,11 +198,19 @@ var createRelationConnectionHelper = function(controllerConfig) {
             //const halfwayPoint = combineObjectProperties(sourcePosition, delta, (left, right) => left + right / 2);
 
         
+=======
+           
+            console.log('position')
+            console.log(sourcePosition)
+            console.log(targetPosition)
+            
+>>>>>>> Stashed changes
             var start = new THREE.Vector3(0,0,0);
             var end = new THREE.Vector3(0,0,0);
             var alle_punkte = [];
 
             const scene = document.querySelector("a-scene");
+<<<<<<< Updated upstream
             const connectorElements = [];
 
             const end_points_in_between = 14;
@@ -361,6 +393,66 @@ var createRelationConnectionHelper = function(controllerConfig) {
             
             // create endpoints
             /**if (controllerConfig.createEndpoints) {
+=======
+            const connectorElements = [];
+
+            const end_points_in_between = 14;
+            const max_plus_y = 30;
+
+            const norm = function(val, max, min) { return (val - min) / (max - min); }
+
+            // loop two create the coordinates of the points between source and target
+            for(let int_index_points = 0; int_index_points < end_points_in_between; int_index_points ++) {
+                start.x = sourcePosition.x + (int_index_points) * (delta.x/end_points_in_between);
+                start.y = sourcePosition.y + (delta.y/end_points_in_between)*(int_index_points);
+                // find the center of the curve (real halfwaypoint) and set it to the highest amplitude
+                if(int_index_points == end_points_in_between/2){
+                    start.y = start.y+max_plus_y;
+                }else{
+                    start.y = start.y + max_plus_y - norm( Math.abs(end_points_in_between/2-int_index_points), (end_points_in_between/2), 0)* norm( Math.abs(end_points_in_between/2-int_index_points), (end_points_in_between/2), 0)*max_plus_y;
+                }
+                start.z = sourcePosition.z+ (delta.z/end_points_in_between)*(int_index_points);
+                console.log("Start");
+                console.log(start);
+
+                end.x = sourcePosition.x + (delta.x/end_points_in_between)*(int_index_points+1);
+                end.y = sourcePosition.y + (delta.y/end_points_in_between)*(int_index_points+1);
+                if(int_index_points+1 == end_points_in_between/2){
+                    end.y = end.y+max_plus_y;
+                }else{
+                    end.y = end.y + max_plus_y - norm(Math.abs(end_points_in_between/2-(int_index_points+1)), (end_points_in_between/2),0)*norm(Math.abs(end_points_in_between/2-(int_index_points+1)), (end_points_in_between/2),0)*max_plus_y;
+                }
+                end.z = sourcePosition.z + (delta.z/end_points_in_between)*(int_index_points+1);
+
+                console.log("End");
+                console.log(end);  
+                
+                const delta_new = combineObjectProperties(end, start, (left, right) => left - right);
+            
+                const distance_new = start.distanceTo(end);
+                
+                const direction_new = new THREE.Vector3(delta_new.x, delta_new.y, delta_new.z).normalize();
+
+                const connector_new = document.createElement("a-cylinder");
+                const halfwayPoint_new = combineObjectProperties(start, delta_new, (left, right) => left + right / 2);
+
+                setConnectorMeshProperties(connector_new, halfwayPoint_new, direction_new, connectorSize, distance_new);
+                setCommonConnectorHTMLProperties(connector_new, controllerConfig.connectorColor);
+                connector_new.setAttribute("radius", 5);
+                connector_new.setAttribute("id", relationId+'_'+int_index_points);
+
+                scene.appendChild(connector_new);
+                
+                connectorElements.push(connector_new);
+
+                alle_punkte.push(start);
+                alle_punkte.push(end);
+            }
+            
+            
+            // create endpoints (old code from original)
+            if (controllerConfig.createEndpoints) {
+>>>>>>> Stashed changes
                 const size = connectorSize * 1.5;
                 const length = size * 6;
                 const sourceEndpoint = document.createElement("a-cylinder");

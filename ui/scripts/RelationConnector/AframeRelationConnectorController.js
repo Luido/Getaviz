@@ -242,15 +242,21 @@ var relationConnectorController = function(){
 
         // This function made no sense and doesn't seem to work on x3dom either
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		/*if(controllerConfig.fixPositionZ) {
             sourcePosition.z = controllerConfig.fixPositionZ;
             targetPosition.z = controllerConfig.fixPositionZ;
         }*/
 =======
+=======
+>>>>>>> Stashed changes
 		if(controllerConfig.fixPositionZ) {
             sourcePosition.z = controllerConfig.fixPositionZ;
             targetPosition.z = controllerConfig.fixPositionZ;
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		// suggestion for city model: draw horizontal cylinders on the lower positions level
 		if(controllerConfig.fixPositionY) {
@@ -265,6 +271,7 @@ var relationConnectorController = function(){
         let distance = sourcePosition.distanceTo(targetPosition);
         let direction = new THREE.Vector3(deltaX, deltaY, deltaZ).normalize();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         //var connector = document.createElement("a-cylinder");
 =======
@@ -349,6 +356,13 @@ var relationConnectorController = function(){
 
 		connector.addEventListener("loaded", function() {
 >>>>>>> Stashed changes
+=======
+        var connector = document.createElement("a-cylinder");
+        
+       
+
+		connector.addEventListener("loaded", function() {
+>>>>>>> Stashed changes
 			let threeMesh = this.object3DMap.mesh;
 
             threeMesh.scale.set(connectorSize, distance, connectorSize);
@@ -365,20 +379,27 @@ var relationConnectorController = function(){
             quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		});*/
 		//connector.setAttribute("flat-shading", true);
 		//connector.setAttribute("shader", "flat");
 //                 connector.setAttribute("radius", 5);
 =======
+=======
+>>>>>>> Stashed changes
 		});
 		connector.setAttribute("flat-shading", true);
 		connector.setAttribute("shader", "flat");
                  connector.setAttribute("radius", 5);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
 
 		let scene = document.querySelector("a-scene");
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 		//scene.appendChild(connector);
 		scene.appendChild(curve);
@@ -417,6 +438,13 @@ var relationConnectorController = function(){
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+		scene.appendChild(connector);
+		
+		var connectorElements = [];
+		connectorElements.push(connector);
+		
 >>>>>>> Stashed changes
 
 		// create Endpoints
