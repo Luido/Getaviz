@@ -103,6 +103,7 @@ var createRelationConnectionHelper = function(controllerConfig) {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
         
 >>>>>>> Stashed changes
@@ -114,6 +115,8 @@ var createRelationConnectionHelper = function(controllerConfig) {
 >>>>>>> Stashed changes
 /////////////// this is important /////////////////////
 =======
+=======
+>>>>>>> Stashed changes
         
 /**
  * Changes:
@@ -133,6 +136,7 @@ var createRelationConnectionHelper = function(controllerConfig) {
             const delta = combineObjectProperties(targetPosition, sourcePosition, (left, right) => left - right);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             const distance_start_end  = Math.sqrt((targetPosition.x-targetPosition.x)*(targetPosition.x-targetPosition.x));
             delta.x= delta.x-distance_start_end/3;
             delta.y = delta.y + distance_start_end/2;
@@ -146,10 +150,14 @@ var createRelationConnectionHelper = function(controllerConfig) {
 =======
             
 >>>>>>> Stashed changes
+=======
+            
+>>>>>>> Stashed changes
             const distance = sourcePosition.distanceTo(targetPosition);
             
             const direction = new THREE.Vector3(delta.x, delta.y, delta.z).normalize();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             // create connector
@@ -401,6 +409,38 @@ var createRelationConnectionHelper = function(controllerConfig) {
 
             const norm = function(val, max, min) { return (val - min) / (max - min); }
 
+=======
+            console.log(delta) // delta is the difference between startpoint and endpoint
+            console.log(distance) // distance is euclidean distance between start and endpoint
+            console.log(connectorSize)
+            console.log('dir')
+            console.log(direction)
+           
+            console.log('position')
+            console.log(sourcePosition)
+            console.log(targetPosition)
+            
+            var start = new THREE.Vector3(0,0,0);
+            var end = new THREE.Vector3(0,0,0);
+            var alle_punkte = [];
+
+            const scene = document.querySelector("a-scene");
+            const connectorElements = [];
+
+            const end_points_in_between = 14;
+            //if(distance)
+            var max_plus_y = 100;
+
+            const norm = function(val, max, min) { return (val - min) / (max - min); }
+            
+			// dynamic change of max amplitude of the curve depending on distance between source- and targetpoint
+            var factor = norm(distance,1000,0);
+            console.log(factor);
+            max_plus_y = Math.round(max_plus_y * factor);
+            console.log(max_plus_y);
+           
+            
+>>>>>>> Stashed changes
             // loop two create the coordinates of the points between source and target
             for(let int_index_points = 0; int_index_points < end_points_in_between; int_index_points ++) {
                 start.x = sourcePosition.x + (int_index_points) * (delta.x/end_points_in_between);

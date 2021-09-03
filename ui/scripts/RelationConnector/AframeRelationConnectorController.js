@@ -243,6 +243,7 @@ var relationConnectorController = function(){
         // This function made no sense and doesn't seem to work on x3dom either
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		/*if(controllerConfig.fixPositionZ) {
             sourcePosition.z = controllerConfig.fixPositionZ;
             targetPosition.z = controllerConfig.fixPositionZ;
@@ -250,11 +251,16 @@ var relationConnectorController = function(){
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 		if(controllerConfig.fixPositionZ) {
             sourcePosition.z = controllerConfig.fixPositionZ;
             targetPosition.z = controllerConfig.fixPositionZ;
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -271,6 +277,7 @@ var relationConnectorController = function(){
         let distance = sourcePosition.distanceTo(targetPosition);
         let direction = new THREE.Vector3(deltaX, deltaY, deltaZ).normalize();
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
         //var connector = document.createElement("a-cylinder");
@@ -363,6 +370,13 @@ var relationConnectorController = function(){
 
 		connector.addEventListener("loaded", function() {
 >>>>>>> Stashed changes
+=======
+        var connector = document.createElement("a-cylinder");
+        
+       
+
+		connector.addEventListener("loaded", function() {
+>>>>>>> Stashed changes
 			let threeMesh = this.object3DMap.mesh;
 
             threeMesh.scale.set(connectorSize, distance, connectorSize);
@@ -380,6 +394,7 @@ var relationConnectorController = function(){
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		});*/
 		//connector.setAttribute("flat-shading", true);
 		//connector.setAttribute("shader", "flat");
@@ -387,11 +402,16 @@ var relationConnectorController = function(){
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 		});
 		connector.setAttribute("flat-shading", true);
 		connector.setAttribute("shader", "flat");
                  connector.setAttribute("radius", 5);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -399,6 +419,7 @@ var relationConnectorController = function(){
 
 
 		let scene = document.querySelector("a-scene");
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 		//scene.appendChild(connector);
@@ -440,11 +461,16 @@ var relationConnectorController = function(){
 =======
 >>>>>>> Stashed changes
 =======
+=======
+>>>>>>> Stashed changes
 		scene.appendChild(connector);
 		
 		var connectorElements = [];
 		connectorElements.push(connector);
 		
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 		// create Endpoints
